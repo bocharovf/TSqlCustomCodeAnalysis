@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScraper", "WebScraper\WebScraper.csproj", "{A09B684C-B33F-4121-9305-6CE11BD9344C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlCodeAnalysisRules", "SqlCodeAnalysisRules\SqlCodeAnalysisRules.csproj", "{C0CA92BB-59AD-476B-B64C-6C75588C4D97}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SampleDBWithCA", "SampleDBWithCA\SampleDBWithCA.sqlproj", "{6B24EEDC-48D9-4C67-B525-FD80D51B733F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{A09B684C-B33F-4121-9305-6CE11BD9344C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A09B684C-B33F-4121-9305-6CE11BD9344C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A09B684C-B33F-4121-9305-6CE11BD9344C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0CA92BB-59AD-476B-B64C-6C75588C4D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0CA92BB-59AD-476B-B64C-6C75588C4D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0CA92BB-59AD-476B-B64C-6C75588C4D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0CA92BB-59AD-476B-B64C-6C75588C4D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B24EEDC-48D9-4C67-B525-FD80D51B733F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B24EEDC-48D9-4C67-B525-FD80D51B733F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B24EEDC-48D9-4C67-B525-FD80D51B733F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6B24EEDC-48D9-4C67-B525-FD80D51B733F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B24EEDC-48D9-4C67-B525-FD80D51B733F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B24EEDC-48D9-4C67-B525-FD80D51B733F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
