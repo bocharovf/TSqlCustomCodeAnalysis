@@ -64,6 +64,7 @@ namespace SqlCodeAnalysisRules
             SqlRuleExecutionContext ruleExecutionContext)
         {
             IList<SqlRuleProblem> problems = new List<SqlRuleProblem>();
+            List<TSqlFragment> restrictedFunctionCalls = new List<TSqlFragment>();
 
             TSqlObject modelElement = ruleExecutionContext.ModelElement;
 
@@ -71,12 +72,20 @@ namespace SqlCodeAnalysisRules
 
             TSqlFragment fragment = ruleExecutionContext.ScriptFragment;
             RuleDescriptor ruleDescriptor = ruleExecutionContext.RuleDescriptor;
-  
-            var visitor = new FunctionCallVisitor(IncompatibleFunctions);
-            fragment.Accept(visitor);
-            IList<FunctionCall> functionCalls = visitor.FunctionCallStatements;
 
-            foreach (FunctionCall functionCall in functionCalls)
+            var visitorTvp = new GlobalFunctionTableReferenceVisitor(IncompatibleFunctions);
+            var visitorFunction = new FunctionCallVisitor(IncompatibleFunctions);
+            var openJson = new OpenJsonTableReferenceVisitor();
+
+            fragment.Accept(visitorTvp);
+            fragment.Accept(visitorFunction);
+            fragment.Accept(openJson);
+
+            restrictedFunctionCalls.AddRange(visitorTvp.FragmentsFound);
+            restrictedFunctionCalls.AddRange(visitorFunction.FragmentsFound);
+            restrictedFunctionCalls.AddRange(openJson.FragmentsFound);
+
+            foreach (TSqlFragment functionCall in restrictedFunctionCalls)
             {
                 SqlRuleProblem problem = new SqlRuleProblem(
                     String.Format(CultureInfo.CurrentCulture,

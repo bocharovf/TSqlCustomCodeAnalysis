@@ -29,7 +29,7 @@ BEGIN
 		SELECT 'DATA' DATA
 	) DATA
 
-	-- restricted table valued functions (are not working yet):
+	-- restricted table valued functions:
 	SELECT * FROM STRING_SPLIT('', '')
 	SELECT * FROM OPENJSON('')
 

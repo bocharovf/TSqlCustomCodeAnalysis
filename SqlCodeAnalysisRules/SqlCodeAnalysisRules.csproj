@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvoidFunctionsIncompatibleWithSql2012.cs" />
+    <Compile Include="OpenJsonTableReferenceVisitor.cs" />
+    <Compile Include="GlobalFunctionTableReferenceVisitor.cs" />
     <Compile Include="RuleResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

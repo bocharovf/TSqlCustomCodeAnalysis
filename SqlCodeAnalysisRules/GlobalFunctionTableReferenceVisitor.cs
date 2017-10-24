@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace SqlCodeAnalysisRules
 {
-    internal class FunctionCallVisitor : TSqlConcreteFragmentVisitor
+    internal class GlobalFunctionTableReferenceVisitor : TSqlConcreteFragmentVisitor
     {
         public IList<TSqlFragment> FragmentsFound { get; private set; }
         public IEnumerable<string> RestrictedFunctionsList { get; private set; }
 
-        public FunctionCallVisitor(IEnumerable<string> restrictedFunctionsList)
+        public GlobalFunctionTableReferenceVisitor(IEnumerable<string> restrictedFunctionsList)
         {
             FragmentsFound = new List<TSqlFragment>();
             RestrictedFunctionsList = restrictedFunctionsList;
         }
 
-        public override void ExplicitVisit(FunctionCall node)
+        public override void ExplicitVisit(GlobalFunctionTableReference node)
         {
-            if (RestrictedFunctionsList.Contains(node.FunctionName.Value, StringComparer.InvariantCultureIgnoreCase))
+            if (RestrictedFunctionsList.Contains(node.Name.Value, StringComparer.InvariantCultureIgnoreCase))
             {
                 FragmentsFound.Add(node);
             }
