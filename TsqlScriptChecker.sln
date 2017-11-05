@@ -13,6 +13,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SqlClrAnalysisObjects", "Sq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlAnalysisCommon", "SqlAnalysisCommon\SqlAnalysisCommon.csproj", "{95E98C55-30F9-4C05-9356-39E4699E835E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlAnalysisCommon.Test", "SqlAnalysisCommon.Test\SqlAnalysisCommon.Test.csproj", "{64242CEC-E862-4F53-BCBE-FEBD39A58B7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{95E98C55-30F9-4C05-9356-39E4699E835E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95E98C55-30F9-4C05-9356-39E4699E835E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95E98C55-30F9-4C05-9356-39E4699E835E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64242CEC-E862-4F53-BCBE-FEBD39A58B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64242CEC-E862-4F53-BCBE-FEBD39A58B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64242CEC-E862-4F53-BCBE-FEBD39A58B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64242CEC-E862-4F53-BCBE-FEBD39A58B7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
