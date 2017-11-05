@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C0CA92BB-59AD-476B-B64C-6C75588C4D97}</ProjectGuid>
+    <ProjectGuid>{95E98C55-30F9-4C05-9356-39E4699E835E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SqlCodeAnalysisRules</RootNamespace>
-    <AssemblyName>SqlCodeAnalysisRules</AssemblyName>
+    <RootNamespace>SqlAnalysisCommon</RootNamespace>
+    <AssemblyName>SqlAnalysisCommon</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -37,45 +37,44 @@
     <AssemblyOriginatorKeyFile>bocharovf.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.Tools.Utilities">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130\Microsoft.Data.Tools.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Dac">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130\Microsoft.SqlServer.Dac.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Dac.Extensions">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130\Microsoft.SqlServer.Dac.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.TransactSql.ScriptDom, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\140\Microsoft.SqlServer.TransactSql.ScriptDom.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IncompatibleFunctionsSql2012.cs" />
-    <Compile Include="CodeAnalysisRuleConstants.cs" />
-    <Compile Include="LocalizedExportCodeAnalysisRuleAttribute.cs" />
+    <Compile Include="CommonRuleConstants.cs" />
+    <Compile Include="RuleResources.Designer.cs">
+      <DependentUpon>RuleResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Rules\IncompatibleFunctionsSql2012Rule.cs" />
+    <Compile Include="Common\IGenericSqlAnalysisRule.cs" />
+    <Compile Include="Common\ISqlCodeAnalysisProblem.cs" />
+    <Compile Include="Problems\FunctionCallIncompatibleWithSql2012Problem.cs" />
+    <Compile Include="Common\FunctionCallFragmentInfo.cs" />
+    <Compile Include="Visitors\FunctionCallVisitor.cs" />
+    <Compile Include="Visitors\GlobalFunctionTableReferenceVisitor.cs" />
+    <Compile Include="Visitors\OpenJsonTableReferenceVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SqlAnalysisCommon\SqlAnalysisCommon.csproj">
-      <Project>{95e98c55-30f9-4c05-9356-39e4699e835e}</Project>
-      <Name>SqlAnalysisCommon</Name>
-    </ProjectReference>
+    <None Include="bocharovf.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bocharovf.pfx" />
+    <EmbeddedResource Include="RuleResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RuleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

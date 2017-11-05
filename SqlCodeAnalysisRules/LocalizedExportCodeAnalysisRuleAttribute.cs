@@ -1,12 +1,9 @@
 ﻿using Microsoft.SqlServer.Dac.CodeAnalysis;
+using SqlAnalysisCommon;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SqlCodeAnalysisRules
 {
@@ -43,7 +40,7 @@ namespace SqlCodeAnalysisRules
         /// <returns></returns>  
         protected virtual Assembly GetAssembly()
         {
-            return GetType().Assembly;
+            return typeof(RuleResources).Assembly;
         }
 
         private void EnsureResourceManagerInitialized()
@@ -56,7 +53,7 @@ namespace SqlCodeAnalysisRules
             }
             catch (Exception ex)
             {
-                var msg = String.Format(CultureInfo.CurrentCulture, RuleResources.CannotCreateResourceManager, _resourceBaseName, resourceAssembly);
+                var msg = String.Format("Can't create ResourceManager for {0} from {1}.", _resourceBaseName, resourceAssembly);
                 throw new RuleException(msg, ex);
             }
         }

@@ -118,15 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AvoidFunctionsIncompatibleWithSql2012_ProblemDescription" xml:space="preserve">
-    <value>Avoid using function incompatible with SQL Server 2012 in stored procedures, functions and triggers.</value>
+    <value>Avoid using function {0} which is incompatible with SQL Server 2012 in stored procedures, functions and triggers.</value>
   </data>
   <data name="AvoidFunctionsIncompatibleWithSql2012_RuleName" xml:space="preserve">
     <value>Incompatible function call was found in {0}.</value>
-  </data>
-  <data name="CannotCreateResourceManager" xml:space="preserve">
-    <value>Can't create ResourceManager for {0} from {1}.</value>
-  </data>
-  <data name="CategorySamples" xml:space="preserve">
-    <value>SamplesCategory</value>
   </data>
 </root>

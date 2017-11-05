@@ -43,8 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleDataExporter.cs" />
+    <Compile Include="CsvDataExporter.cs" />
+    <Compile Include="IDataExporter.cs" />
+    <Compile Include="SqlObjectLink.cs" />
+    <Compile Include="SupportedPlatform.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlObjectInfo.cs" />
+    <Compile Include="WebPageLoader.cs" />
+    <Compile Include="WebPageParser.cs" />
+    <Compile Include="WebScraper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

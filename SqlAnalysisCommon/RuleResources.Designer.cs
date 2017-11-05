@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SqlCodeAnalysisRules {
+namespace SqlAnalysisCommon {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace SqlCodeAnalysisRules {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RuleResources {
+    public class RuleResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace SqlCodeAnalysisRules {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SqlCodeAnalysisRules.RuleResources", typeof(RuleResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SqlAnalysisCommon.RuleResources", typeof(RuleResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace SqlCodeAnalysisRules {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,9 @@ namespace SqlCodeAnalysisRules {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avoid using function incompatible with SQL Server 2012 in stored procedures, functions and triggers..
+        ///   Looks up a localized string similar to Avoid using function {0} which is incompatible with SQL Server 2012 in stored procedures, functions and triggers..
         /// </summary>
-        internal static string AvoidFunctionsIncompatibleWithSql2012_ProblemDescription {
+        public static string AvoidFunctionsIncompatibleWithSql2012_ProblemDescription {
             get {
                 return ResourceManager.GetString("AvoidFunctionsIncompatibleWithSql2012_ProblemDescription", resourceCulture);
             }
@@ -72,27 +72,9 @@ namespace SqlCodeAnalysisRules {
         /// <summary>
         ///   Looks up a localized string similar to Incompatible function call was found in {0}..
         /// </summary>
-        internal static string AvoidFunctionsIncompatibleWithSql2012_RuleName {
+        public static string AvoidFunctionsIncompatibleWithSql2012_RuleName {
             get {
                 return ResourceManager.GetString("AvoidFunctionsIncompatibleWithSql2012_RuleName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t create ResourceManager for {0} from {1}..
-        /// </summary>
-        internal static string CannotCreateResourceManager {
-            get {
-                return ResourceManager.GetString("CannotCreateResourceManager", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SamplesCategory.
-        /// </summary>
-        internal static string CategorySamples {
-            get {
-                return ResourceManager.GetString("CategorySamples", resourceCulture);
             }
         }
     }
