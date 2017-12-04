@@ -13,20 +13,6 @@ The solution consists of projects:
 
 ## Run custom CA rule in Visual Studio
 1. Install SQL Server Data Tools
-2. Update references to SDK libraries:
-
-%Microsoft SQL Server Dir%\%version%\SDK\Assemblies\Microsoft.SqlServer.TransactSql.ScriptDom.dll
-
-%VS Install Dir%\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\%version%\Microsoft.Data.Tools.Schema.Sql.dll
-
-%VS Install Dir%\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\%version%\Microsoft.Data.Tools.Utilities.dll
-
-%VS Install Dir%\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\%version%\Microsoft.SqlServer.Dac.dll
-
-%VS Install Dir%\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\%version%\Microsoft.SqlServer.Dac.Extensions.dll
-  
-See https://msdn.microsoft.com/en-us/library/dn632175(v=vs.103).aspx for details.
-
 3. Build solution
 4. Copy both SqlAnalysisCommon.dll and SqlAnalysisCommon.dll to VS extension folder:
 %Visual Studio Install Dir%\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\140\Extensions\
