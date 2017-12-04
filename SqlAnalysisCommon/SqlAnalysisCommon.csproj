@@ -83,8 +83,8 @@
     <Compile Include="Common\ISqlCodeAnalysisProblem.cs" />
     <Compile Include="Problems\FunctionCallIncompatibleWithSql2012Problem.cs" />
     <Compile Include="Common\FunctionCallFragmentInfo.cs" />
-    <Compile Include="Visitors\FunctionCallVisitor.cs" />
-    <Compile Include="Visitors\GlobalFunctionTableReferenceVisitor.cs" />
+    <Compile Include="Visitors\RestrctedFunctionCallVisitor.cs" />
+    <Compile Include="Visitors\RestrictedGlobalFunctionTableReferenceVisitor.cs" />
     <Compile Include="Visitors\OpenJsonTableReferenceVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
